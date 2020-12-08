@@ -1,0 +1,4 @@
+endpoint: ${env:PRISMA_ENDPOINT}
+#endpoint: https://subhankar-blogging-1af3f08f48.herokuapp.com/subhankarde-blogging-app/prod
+datamodel: datamodel.graphql
+secret: ${env:PRISMA_SECRET}
