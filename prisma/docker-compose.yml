@@ -14,9 +14,9 @@ services:
           default:
             connector: postgres
             host: ec2-3-208-224-152.compute-1.amazonaws.com
-            database: dc00u68v4rhu8g
-            user: gnhquiuheupdlq
-            password: 8cb6a386a13fec38ea63cfa45996ee3b22f5550aae79e3248e10ad72c7b34401
+            database: 
+            user: 
+            password: 
             ssl: true
             rawAccess: true
             port: '5432'
