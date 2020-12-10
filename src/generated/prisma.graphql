@@ -1,5 +1,5 @@
-# source: http://localhost:4466
-# timestamp: Sat Dec 05 2020 16:38:22 GMT-0500 (Eastern Standard Time)
+# source: http://localhost:4466/default/test
+# timestamp: Thu Dec 10 2020 07:15:59 GMT-0500 (Eastern Standard Time)
 
 type AggregateComment {
   count: Int!
@@ -23,8 +23,8 @@ type Comment implements Node {
   text: String!
   author: User!
   post: Post!
-  updatedDate: DateTime!
-  createdDate: DateTime!
+  updatedDate: DateTime
+  createdDate: DateTime
 }
 
 """A connection to a list of items."""
@@ -40,8 +40,8 @@ type CommentConnection {
 input CommentCreateInput {
   id: ID
   text: String!
-  updatedDate: DateTime!
-  createdDate: DateTime!
+  updatedDate: DateTime
+  createdDate: DateTime
   author: UserCreateOneWithoutCommentsInput!
   post: PostCreateOneWithoutCommentsInput!
 }
@@ -59,16 +59,16 @@ input CommentCreateManyWithoutPostInput {
 input CommentCreateWithoutAuthorInput {
   id: ID
   text: String!
-  updatedDate: DateTime!
-  createdDate: DateTime!
+  updatedDate: DateTime
+  createdDate: DateTime
   post: PostCreateOneWithoutCommentsInput!
 }
 
 input CommentCreateWithoutPostInput {
   id: ID
   text: String!
-  updatedDate: DateTime!
-  createdDate: DateTime!
+  updatedDate: DateTime
+  createdDate: DateTime
   author: UserCreateOneWithoutCommentsInput!
 }
 
@@ -95,8 +95,8 @@ enum CommentOrderByInput {
 type CommentPreviousValues {
   id: ID!
   text: String!
-  updatedDate: DateTime!
-  createdDate: DateTime!
+  updatedDate: DateTime
+  createdDate: DateTime
 }
 
 input CommentScalarWhereInput {
@@ -566,8 +566,8 @@ type Post implements Node {
   published: Boolean!
   author: User!
   comments(where: CommentWhereInput, orderBy: CommentOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Comment!]
-  updatedDate: DateTime!
-  createdDate: DateTime!
+  updatedDate: DateTime
+  createdDate: DateTime
 }
 
 """A connection to a list of items."""
@@ -585,8 +585,8 @@ input PostCreateInput {
   title: String!
   body: String!
   published: Boolean!
-  updatedDate: DateTime!
-  createdDate: DateTime!
+  updatedDate: DateTime
+  createdDate: DateTime
   author: UserCreateOneWithoutPostsInput!
   comments: CommentCreateManyWithoutPostInput
 }
@@ -606,8 +606,8 @@ input PostCreateWithoutAuthorInput {
   title: String!
   body: String!
   published: Boolean!
-  updatedDate: DateTime!
-  createdDate: DateTime!
+  updatedDate: DateTime
+  createdDate: DateTime
   comments: CommentCreateManyWithoutPostInput
 }
 
@@ -616,8 +616,8 @@ input PostCreateWithoutCommentsInput {
   title: String!
   body: String!
   published: Boolean!
-  updatedDate: DateTime!
-  createdDate: DateTime!
+  updatedDate: DateTime
+  createdDate: DateTime
   author: UserCreateOneWithoutPostsInput!
 }
 
@@ -650,8 +650,8 @@ type PostPreviousValues {
   title: String!
   body: String!
   published: Boolean!
-  updatedDate: DateTime!
-  createdDate: DateTime!
+  updatedDate: DateTime
+  createdDate: DateTime
 }
 
 input PostScalarWhereInput {
@@ -1178,8 +1178,8 @@ type User implements Node {
   password: String!
   posts(where: PostWhereInput, orderBy: PostOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Post!]
   comments(where: CommentWhereInput, orderBy: CommentOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Comment!]
-  updatedDate: DateTime!
-  createdDate: DateTime!
+  updatedDate: DateTime
+  createdDate: DateTime
 }
 
 """A connection to a list of items."""
@@ -1197,8 +1197,8 @@ input UserCreateInput {
   name: String!
   email: String!
   password: String!
-  updatedDate: DateTime!
-  createdDate: DateTime!
+  updatedDate: DateTime
+  createdDate: DateTime
   posts: PostCreateManyWithoutAuthorInput
   comments: CommentCreateManyWithoutAuthorInput
 }
@@ -1218,8 +1218,8 @@ input UserCreateWithoutCommentsInput {
   name: String!
   email: String!
   password: String!
-  updatedDate: DateTime!
-  createdDate: DateTime!
+  updatedDate: DateTime
+  createdDate: DateTime
   posts: PostCreateManyWithoutAuthorInput
 }
 
@@ -1228,8 +1228,8 @@ input UserCreateWithoutPostsInput {
   name: String!
   email: String!
   password: String!
-  updatedDate: DateTime!
-  createdDate: DateTime!
+  updatedDate: DateTime
+  createdDate: DateTime
   comments: CommentCreateManyWithoutAuthorInput
 }
 
@@ -1262,8 +1262,8 @@ type UserPreviousValues {
   name: String!
   email: String!
   password: String!
-  updatedDate: DateTime!
-  createdDate: DateTime!
+  updatedDate: DateTime
+  createdDate: DateTime
 }
 
 type UserSubscriptionPayload {
